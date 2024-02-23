@@ -1,0 +1,801 @@
+<script>
+    var sum = 10 + 10;
+    console.log(sum);
+    var myVar = 65;
+    myVar = myVar + 1;
+    console.log(myVar);
+    var myVar = 20;
+    myVar = myVar - 1;
+    console.log(myVar);
+    var myDecimal = 0.009;
+    console.log(myDecimal);
+    var remainder;
+    remainder = 9 % 2;
+    console.log(remainder);
+    var someAdjective = "to code camp";
+    var myStr = "Welcome ";
+    myStr += someAdjective;
+    console.log(myStr);
+    var firstNameLength = 0;
+    var firstName = "Lisubila";
+    firstNameLength = firstName.length;
+    console.log(firstNameLength);
+    var firstLetterOfFirstName = "";
+    var firstName = "Samuel";
+    firstLetterOfFirstName = firstName[0];
+    console.log(firstLetterOfFirstName);
+    var myArray = ["Samuel", "22"];
+    console.log(myArray);
+    var myArray = [5, 6, 7];
+    var myData = myArray[0];
+    console.log(myData);
+    var myArray = [10, 20, 30];
+    myArray[2] = 8;
+    console.log(myArray);
+    var myArray = [[2, 3, 4], [5, 6, 7], [4, 9, 1], [[10, 11, 12], 13, 14]];
+    myData = myArray[3][0][2];
+    console.log(myData);
+    var myArray = ["Mark", "Luke", "John"];
+    myArray.push("Matthew", "Simon", "Peter");
+    console.log(myArray);
+    var myArray = [[1, 2, 3], [6, 7, 8], [9, 10, 11]];
+    var removeFromMyArray = myArray.pop();
+    console.log(myArray);
+    var myArray = [["Samuel", "22"], ["Gideon", "13"]];
+    var removedFromMyArray = myArray.shift();
+    console.log(myArray);
+    var myArray = ["John", "Dog", "Samuel"];
+    myArray.shift();
+    myArray.unshift("Gideon");
+    console.log(myArray);
+    var myList = [["eggs", 15], ["milk", 2], ["mangoes", 5], ["bananas", 8]]
+    function ourReusableFunction() {
+        console.log("Hello World");
+    }
+    ourReusableFunction();
+    ourReusableFunction();
+    function ourFunctionWithArgs(a, b) {
+        console.log(a - b);
+    }
+    ourFunctionWithArgs(10, 5);
+    ourFunctionWithArgs(13, 20);
+
+    var myGlobal = 10;
+    function fun1() {
+        oopsGlobal = 5;
+    }
+    function fun2() {
+        var output = "";
+        if (typeof myGlobal != "undefined") {
+            output += "myGlobal: " + myGlobal;
+        }
+        if (typeof oopsGlobal != "undefined") {
+            output += "oopsGlobal: " + oopsGlobal;
+        }
+        console.log(output);
+    }
+    fun1();
+    fun2();
+    function myLocalScope() {
+        var myVar = 5;
+        console.log(myVar);
+    }
+    myLocalScope();
+    console.log(myVar);
+
+    function minusSeven(num) {
+        return num - 7;
+    }
+    console.log(minusSeven(15));
+
+    function timesFive(num) {
+        return num * 5;
+    }
+    console.log(timesFive(6));
+
+    var processed = 0;
+    function processArg(num) {
+        return (num + 3) / 5;
+    }
+    processed = processArg(7);
+    console.log(processed);
+
+    function nextInLine(arr, item) {
+        arr.push(item);
+        return arr.shift();
+    }
+    var testArr = [1, 2, 3, 4, 5];
+
+    console.log("Before: " + JSON.stringify(testArr));
+    console.log(nextInLine(testArr, 6));
+    console.log("After: " + JSON.stringify(testArr));
+
+    function trueOrFalse(wasThatTrue) {
+        if (wasThatTrue) {
+            return "Yes, that was true";
+        }
+        return "No, that was false";
+    }
+    console.log(trueOrFalse(false));
+
+    function testEqual(val) {
+        if (val == 10) {
+            return "Equal";
+        }
+        return "Not equal";
+    }
+    console.log(testEqual(10));
+
+    function compareEquality(a, b) {
+        if (a === b) {
+            return "Equal";
+        }
+        return "Not Equal";
+    }
+    console.log(compareEquality(10, "10"))
+
+    function testGreaterThan(val) {
+        if (val >= 25) {
+            return "Over or equal to 25";
+        }
+    }
+    console.log(testGreaterThan(25));
+
+    function testLogicalAnd(val) {
+        if (val <= 50 && val >= 25) {
+            return "Yes";
+        }
+        return "No";
+    }
+    console.log(testLogicalAnd(29))
+
+    function testLogicalOr(val) {
+        if (val < 10 || val > 20) {
+            return "Outside";
+        }
+        return "Inside";
+    }
+    console.log(testLogicalOr(30))
+
+    function testElse(val) {
+        if (val > 5) {
+            return "Bigger than 5";
+        } else {
+            return "5 or Smaller";
+        }
+    }
+    console.log(testElse(5))
+
+    function testElseIf(val) {
+        if (val > 10) {
+            return "Greater than 10";
+        } else if (val < 5) {
+            return "smaller than 5";
+        } else {
+            return "Between 5 and 10";
+        }
+    }
+    console.log(testElseIf(4))
+
+    function isLess(a, b) {
+        return a < b;
+    }
+    console.log(isLess(15, 15))
+
+    function abTest(a, b) {
+        if (a < 0 || b < 0) {
+            return undefined;
+        }
+        return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+    }
+    console.log(abTest(2, 2))
+
+    function switchOfStuff(val) {
+        var answer = "";
+        switch (val) {
+            case "a":
+                answer = "apple";
+                break;
+            case "b":
+                answer = "bird";
+                break;
+            case "c":
+                answer = "cat"
+                break;
+            default:
+                answer = "stuff"
+                break;
+        }
+        return answer;
+    }
+    console.log(switchOfStuff("k"));
+
+    function sequentialSizes(val) {
+        var answer = "";
+        switch (val) {
+            case 1:
+            case 2:
+            case 3:
+                answer = "low";
+                break;
+            case 4:
+            case 5:
+            case 6:
+                answer = "Mid";
+                break;
+            case 7:
+            case 8:
+            case 9:
+                answer = "High";
+                break;
+        }
+        return answer;
+    }
+    console.log(sequentialSizes(9))
+
+    function chainToSwitch(val) {
+        var answer = "";
+        switch (val) {
+            case "bob":
+                answer = "Marley";
+                break;
+            case 42:
+                answer = "The Answer";
+                break;
+            case 1:
+                answer = "There is no #1";
+                break;
+            case "99":
+                answer = "Missed me by this much!";
+                break;
+            case "7":
+                answer = "Ate Nine";
+                break;
+        }
+        return answer;
+    }
+    console.log(chainToSwitch("99"))
+
+    var count = 0;
+    function cc(card) {
+        switch (card) {
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+                count++;
+                break;
+            case 10:
+            case "J":
+            case "Q":
+            case "K":
+            case "A":
+                count--;
+                break;
+
+        }
+
+        var holdbet = 'Hold'
+        if (count > 0) {
+            holdbet = 'Bet'
+        }
+        return count + " " + holdbet;
+    }
+    cc("A"); cc("K"); cc(10); cc('K'); cc('A');
+    console.log(cc(4))
+
+    var ourDog = {
+        "name": "Camper",
+        "legs": 4,
+        "tails": 1,
+        "friends": ["everyrthing"]
+    };
+    console.log(ourDog);
+
+    var testObj = {
+        "hat": "ballcap",
+        "shirt": "jersey",
+        "shoes": "cleats"
+    };
+    var hatValue = testObj.hat;
+    var shirtValue = testObj.shirt;
+    var shoesValue = testObj.shoes;
+
+    console.log(hatValue);
+
+    var ourDog = {
+        "name": "Camper",
+        "legs": 4,
+        "tails": 1,
+        "friends": ["everything"]
+    };
+    ourDog.name = "Happy Camper";
+    console.log(ourDog);
+
+    var ourDog = {
+        "name": "Camper",
+        "legs": 4,
+        "tails": 1,
+        "friends": ["everything"]
+    };
+    ourDog["bark"] = "bow-wow!";
+    console.log(ourDog);
+
+    var ourDog = {
+        "name": "Camper",
+        "legs": 4,
+        "tails": 1,
+        "friends": ["everything"]
+    };
+    delete ourDog.tails;
+    console.log(ourDog);
+
+    function phoneticLookup(val) {
+        var result = "";
+        var lookup = {
+            "alpha": "Adams",
+            "bravo": "Boston",
+            "charlie": "Chicago",
+            "delta": "Denver",
+            "echo": "Easy",
+            "foxtron": "Frank"
+        };
+        result = lookup[val];
+        return result;
+    }
+    console.log(phoneticLookup("charlie"));
+
+    var myObj = {
+        gift: "pony",
+        pet: "kitten",
+        bed: "sleigh"
+    };
+    function checkObj(checkProp) {
+        if (myObj.hasOwnProperty(checkProp)) {
+            return myObj[checkProp];
+        } else {
+            return "Not Found"
+        }
+    }
+    console.log(checkObj("shoes"))
+
+    var myMusic = [
+        {
+            "artist": "Jermaine Cole",
+            "title": "Pride is The Devil",
+            "release_year": 2022,
+            "formats": [
+                "CD",
+                "Album",
+                "Label"
+            ],
+            "gold": true
+        },
+        {
+            "artist": "Drake",
+            "title": "God's Plan",
+            "release_year": 2018,
+            "formats": [
+                "YouTube Video"
+
+            ],
+            "gold": true
+        }
+    ]
+    console.log(myMusic)
+    var myStorage = {
+        "car": {
+            "inside": {
+                "glove box": "maps",
+                "passenger seat": "crumbs"
+            },
+            "outside": {
+                "trunk": "jack"
+            }
+        }
+    };
+    var trunkContents = myStorage.car.outside["trunk"];
+    console.log(trunkContents)
+
+    var myPlants = [
+        {
+            type: "flowers",
+            list: [
+                "rose",
+                "tulip",
+                "dundelion"
+            ]
+        },
+        {
+            type: "trees",
+            list: [
+                "fir",
+                "pine",
+                "birch"
+            ]
+        }
+    ];
+    var secondTree = myPlants[1].list[1];
+    console.log(secondTree)
+
+    var collection = {
+        "2548": {
+            "album": "Slippery When Wet",
+            "artist": "Bon Jovi",
+            "tracks": [
+                "Let It Rock",
+                "You Give Love a Bad Name"
+            ]
+        },
+        "2468": {
+            "album": "1999",
+            "artist": "Prince",
+            "tracks": [
+                "1999",
+                "Little Red Corvette"
+            ]
+        },
+
+        "1245": {
+            "artist": "Robert Palmer",
+            "tracks": []
+        },
+        "5439": {
+            "album": "ABBA Gold"
+        }
+    }
+    var collectionCopy = JSON.parse(JSON.stringify(collection));
+    function updateRecords(id, prop, value) {
+        if (value === "") {
+            delete collection[id][prop];
+        } else if (prop === "tracks") {
+            collection[id][prop] = collection[id][prop] || [];
+            collection[id][prop].push(value);
+        } else {
+            collection[id][prop] = value;
+        }
+        return collection;
+    }
+    updateRecords(2468, "tracks", "test");
+    console.log(updateRecords(5439, "artist", "ABBA"));
+
+    var myArray = [];
+    var i = 3;
+    while (i < 5) {
+        myArray.push(i);
+        i++;
+    }
+    console.log(myArray);
+
+    var ourArray = [];
+    for (var i = 0; i < 5; i++) {
+        ourArray.push(i);
+    }
+    console.log(ourArray);
+
+    var ourArray = []
+    for (var i = 1; i < 10; i += 2) {
+        ourArray.push(i);
+    }
+    console.log(ourArray);
+
+    var ourArray = []
+    for (var i = 9; i > 0; i -= 2) {
+        ourArray.push(i);
+    }
+    console.log(ourArray);
+
+    var myArr = [2, 3, 4, 5, 6];
+    myTotal = 0;
+
+    for (var i = 0; i < myArr.length; i++) {
+        myTotal += myArr[i];
+    }
+    console.log(myTotal)
+
+    function multiplyAll(arr) {
+        var product = 1;
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = 0; j < arr[i].length; j++) {
+                product *= arr[i][j];
+            }
+        }
+        return product;
+    }
+    var product = multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
+    console.log(product);
+
+    var myArray = [];
+    var i = 10;
+    do {
+        myArray.push(i);
+        i++;
+    } while (i < 5)
+    console.log(i, myArray);
+
+    var contacts = [
+        {
+            "firstName": "Akira",
+            "lastName": "Laine",
+            "number": "0725441010",
+            "likes": ["Pizza", "Coding", "Brownie Points"]
+        },
+        {
+            "firstName": "Harry",
+            "lastName": "Porter",
+            "number": "0722981010",
+            "likes": ["Hogwarts", "Magic", "Hagrid"]
+        },
+        {
+            "firstName": "Sherlock",
+            "lastName": "Holmes",
+            "number": "0798657684",
+            "likes": ["Intriguing Cases", "Violin"]
+        },
+        {
+            "firstName": "Kristian",
+            "lastName": "Vos",
+            "number": "0773572940",
+            "likes": ["Javascript", "Gaming", "Foxes"]
+        },
+    ];
+    function lookUpProfile(name, prop) {
+        for (var i = 0; i < contacts.length; i++) {
+            if (contacts[i].firstName === name) {
+                return contacts[i][prop] || "No such Property";
+            }
+        }
+        return "No such contact"
+    }
+    var data = lookUpProfile("Sherlock", "likes");
+    console.log(data);
+
+    function randomFraction() {
+        return Math.random();
+    }
+    console.log(randomFraction());
+
+    var randomNumberBetween0and19 = Math.floor(Math.random() * 20)
+    function randomWholeNum() {
+        return Math.floor(Math.random() * 10);
+    }
+    console.log(randomWholeNum());
+
+    function ourRandomRange(ourMin, ourMax) {
+        return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
+    }
+    ourRandomRange(1, 9);
+    function randomRange(myMin, myMax) {
+        return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+    }
+    var myRandom = randomRange(5, 15);
+    console.log(myRandom);
+
+    function convertToInteger(str) {
+        return parseInt(str);
+    }
+    console.log(convertToInteger("65"));
+
+    function convertToInteger(str) {
+        return parseInt(str, 2)
+    }
+    console.log(convertToInteger("10011"));
+
+    function checkEqual(a, b) {
+        return a === b ? true : false;
+    }
+    console.log(checkEqual(12, 12));
+
+    function checkSign(num) {
+        return num > 0 ? "positive" : num < 0 ? "negative" : "zero"
+    }
+    console.log(checkSign(-12));
+
+    function printManyTimes(str) {
+        "use strict";
+        const SENTENCE = str + " is cool!";
+        for (let i = 0; i < str.length; i += 2) {
+            console.log(SENTENCE);
+        }
+    }
+    console.log(printManyTimes("freeCodeCamp"));
+
+    const s = [5, 7, 2];
+    function editInPlace() {
+        "use strict";
+        s[0] = 2;
+        s[1] = 5;
+        s[2] = 7;
+    }
+    editInPlace();
+    console.log(s);
+
+    function freezeObj() {
+        "use strict";
+        const MATH_CONSTANTS = {
+            PI: 3.14
+        };
+        Object.freeze(MATH_CONSTANTS);
+        try {
+            MATH_CONSTANTS.PI = 99;
+        } catch (ex) {
+            console.log(ex);
+        }
+        return MATH_CONSTANTS.PI;
+    }
+    const PI = freezeObj();
+
+    var myConcat = function (arr1, arr2) {
+        return arr1.concat(arr2);
+    };
+    console.log(myConcat([1, 2], [3, 4, 5]));
+
+    var myConcat = (arr1, arr2) => arr1.concat(arr2);
+    console.log(myConcat([1, 2], [3, 4, 5]));
+
+    const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+    const squareList = (arr) => {
+        const squaredIntegers = arr.filter(num => Number.isInteger(num) && num > 0).map(x => x * x);
+        return squaredIntegers;
+    };
+    const squaredIntegers = squareList(realNumberArray);
+    console.log(squaredIntegers);
+
+    const increment = (function () {
+        return function increment(number, value = 1) {
+            return number + value;
+        };
+    })();
+    console.log(increment(5, 2));
+    console.log(increment(5));
+
+    const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+    let arr2;
+    (function () {
+        arr2 = arr1;
+        arr1[0] = 'potato'
+    })();
+    console.log(arr2);
+
+    const AVG_TEMPERATURES = {
+        today: 77.5,
+        tomorrow: 79
+    };
+    function getTempOfTmrw(avgTemperatures) {
+        "use strict";
+        const { tomorrow: tempOfTomorrow } = avgTemperatures;
+        return tempOfTomorrow;
+    };
+    console.log(getTempOfTmrw(AVG_TEMPERATURES));
+
+    const LOCAL_FORECAST = {
+        today: { min: 72, max: 83 },
+        tomorrow: { min: 73.3, max: 84.6 }
+    };
+    function getMaxOfTmrw(forecast) {
+        "use strict";
+        const { tomorrow: { max: maxOfTomorrow } } = forecast;
+        return maxOfTomorrow;
+    };
+    console.log(getMaxOfTmrw(LOCAL_FORECAST));
+
+    const [z, x, , y] = [1, 2, 3, 4, 5, 6];
+    console.log(z, x, y);
+
+    let a = 8, b = 6;
+    (() => {
+        "use strict";
+        [a, b] = [b, a]
+    })();
+    console.log(a);
+    console.log(b);
+
+    const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    function removeFirstTwo(list) {
+        const [, , ...arr] = list;
+        return arr;
+    }
+    const arr = removeFirstTwo(source);
+    console.log(arr);
+    console.log(source);
+
+    const stats = {
+        max: 56.78,
+        standard_deviation: 4.34,
+        median: 34.54,
+        mode: 23.87,
+        min: -0.75,
+        average: 35.85
+    };
+    const half = (function () {
+        return function half(stats) {
+            return (stats.max + stats.min) / 2.0;
+        };
+    })();
+    console.log(stats);
+    console.log(half(stats));
+
+    const person = {
+        name: "Samuel",
+        age: 22
+    };
+    const greeting = `Hello, my name is ${person.name}!
+    I am ${person.age} years old.`;
+    console.log(greeting);
+
+    const result = {
+        success: ["max-length", "no-amd", "prefer-arrow-functions"],
+        failure: ["no-var", "var-on-top", "linebreak"],
+        skipped: ["id-blacklist", "no-dup-keys"]
+    };
+    function makeList(arr) {
+        const resultDisplayArray = [];
+        for (let i = 0; i < arr.length; i++) {
+            resultDisplayArray.push(`<li class="text-warning">${arr[i]}</li>`)
+        }
+        return resultDisplayArray;
+    };
+    const resultDisplayArray = makeList(result.failure);
+    console.log(resultDisplayArray);
+
+    const createPerson = (name, age, gender) => {
+        return {
+            name: name,
+            age: age,
+            gender: gender
+        };
+    };
+    console.log(createPerson("Gideon", 13, "male"));
+
+    const bicycle = {
+        gear: 2,
+        setGear: function (newGear) {
+            "use strict";
+            this.gear = newGear;
+        }
+    };
+    bicycle.setGear(3);
+    console.log(bicycle.gear);
+
+    var SpaceShuttle = function (targetPlanet) {
+        this.targetPlanet = targetPlanet;
+    }
+    var zeus = new SpaceShuttle('Jupiter');
+    console.log(zeus.targetPlanet);
+
+    function makeClass() {
+        class Vegetable {
+            constructor(name) {
+                this.name = name;
+            }
+        }
+        return Vegetable;
+    }
+    const Vegetable = makeClass();
+    const carrot = new Vegetable('carrot');
+    console.log(carrot.name);
+
+    function makeClass() {
+        class Thermostat {
+            constructor(temp) {
+                this._temp = 5 / 9 * (temp - 32);
+            }
+            get temperature() {
+                return this._temp;
+            }
+            set temperature(updatedTemp) {
+                this._temp = updatedTemp;
+            }
+        }
+        return Thermostat;
+    }
+    const Thermostat = makeClass();
+    const thermos = new Thermostat(76);
+    let temp = thermos.temperature;
+    thermos.temperature = 26;
+    temp = thermos.temperature;
+    console.log(temp);
+
+
+</script>
